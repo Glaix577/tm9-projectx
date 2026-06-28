@@ -1,0 +1,152 @@
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --col-a:   #ff4fd8;   /* izquierda  */
+  --col-s:   #4fd8ff;   /* centro-izq */
+  --col-k:   #4dff91;   /* centro-der */
+  --col-l:   #ffd24f;   /* derecha    */
+  --bg:      #0d0d1a;
+  --surface: #161628;
+  --text:    #e8e8ff;
+  --dim:     #44445a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ── Pantallas ── */
+.screen {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+}
+.screen.active { display: flex; }
+
+/* ── Menú ── */
+.menu-content { text-align: center; }
+
+.title {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: var(--text);
+}
+.title span { color: var(--col-a); }
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--dim);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.keys-hint {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.key {
+  width: 52px; height: 52px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.2rem;
+  border: 2px solid var(--dim);
+  color: var(--dim);
+}
+.key:nth-child(1) { border-color: var(--col-a); color: var(--col-a); }
+.key:nth-child(2) { border-color: var(--col-s); color: var(--col-s); }
+.key:nth-child(3) { border-color: var(--col-k); color: var(--col-k); }
+.key:nth-child(4) { border-color: var(--col-l); color: var(--col-l); }
+
+/* ── HUD ── */
+#hud {
+  position: absolute;
+  top: 1rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 3rem;
+  font-size: 1rem; font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dim);
+  z-index: 10;
+}
+#hud span { color: var(--text); }
+
+/* ── Canvas ── */
+#gameCanvas {
+  display: block;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+/* ── Judgment (PERFECT / GOOD / MISS) ── */
+#judgment {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  text-shadow: 0 0 20px currentColor;
+  z-index: 20;
+}
+#judgment.show { opacity: 1; }
+#judgment.perfect { color: #ffd24f; }
+#judgment.good    { color: #4dff91; }
+#judgment.miss    { color: #ff4f4f; }
+
+/* ── Resultados ── */
+.results-content {
+  text-align: center;
+  display: flex; flex-direction: column; gap: 1.2rem;
+}
+.results-content h2 {
+  font-size: 3rem; font-weight: 900;
+  letter-spacing: 4px;
+}
+.results-content p { font-size: 1.2rem; color: var(--dim); }
+.results-content strong { color: var(--text); }
+
+#result-sprite {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+}
+
+#btn-retry {
+  margin-top: 1rem;
+  padding: 0.8rem 2.5rem;
+  background: transparent;
+  border: 2px solid var(--col-a);
+  color: var(--col-a);
+  font-size: 1rem; font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+#btn-retry:hover {
+  background: var(--col-a);
+  color: var(--bg);
+}

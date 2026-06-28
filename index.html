@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ritmo Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PANTALLA DE INICIO -->
+  <div id="screen-menu" class="screen active">
+    <div class="menu-content">
+      <h1 class="title">TM9<span>PROJECTX</span></h1>
+      <p class="subtitle">Presiona cualquier tecla para empezar</p>
+      <div class="keys-hint">
+        <span class="key">A</span>
+        <span class="key">S</span>
+        <span class="key">K</span>
+        <span class="key">L</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANTALLA DE JUEGO -->
+  <div id="screen-game" class="screen">
+    <div id="hud">
+      <div id="score-display">SCORE: <span id="score">0</span></div>
+      <div id="combo-display">COMBO: <span id="combo">0</span></div>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="judgment"></div>
+  </div>
+
+  <!-- PANTALLA DE RESULTADOS -->
+  <div id="screen-results" class="screen">
+    <div class="results-content">
+      <img id="result-sprite" src="" alt="resultado" />
+      <h2 id="results-title">RESULTADO</h2>
+      <p>Score final: <strong id="final-score">0</strong></p>
+      <p>Max Combo: <strong id="final-combo">0</strong></p>
+      <button id="btn-retry">Reintentar</button>
+    </div>
+  </div>
+
+  <script src="src/main.js"    type="module"></script>
+</body>
+</html>

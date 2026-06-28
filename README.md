@@ -17,11 +17,11 @@ a mid school project. Yeah im to lazy to finish it so, dont split nothing abt it
 for ppl that likes use the terminal on **Linux** and want to open a live server with npx instead Vscode + Live server extension Method
 - 1 install [Node.JS LTS](https://nodejs.org/)
 
-> Now install live-server
+> go to ur tm9-projectx folder and install live-server
 ```sh
 npm install -g live-server
 ```
-> go to ur tm9-projectx folder and run liveserver
+> and run live server
 ```sh
 live-server
 ```

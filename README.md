@@ -22,9 +22,7 @@ for ppl that likes use the terminal on **Linux** and want to open a live server 
 npm install -g live-server
 ```
 > go to ur tm9-projectx folder and run liveserver
-# Ex
 ```sh
-cd ~/Downloads/tm9-projectx-main
 live-server
 ```
 # And now u can play the game

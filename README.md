@@ -2,7 +2,7 @@
 a mid school project. Yeah im to lazy to finish it so, dont split nothing abt it
 # How to play the game
 - 0.5 install the zip and descompress it
-- 1 install Vs Code on https://code.visualstudio.com/ and then, open it
+- 1 install Vs Code on [Vscode](https://code.visualstudio.com/) and then, open it
 - 2 press LCtrl + shift + x and search Live Server by Ritwick Dey (or if is in ur case, the first one)
 - 3 install it, (if ask u if r u sure and trust abt the file. Do it theres no risk in it.
 - 4 click on Files and select "Open file" or press "LCtrl + K LCtrl + O"
